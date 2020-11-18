@@ -68,7 +68,7 @@ pub fn generate_filters(
         let capacity = words.as_ref().map(|words| words.len()).unwrap_or(0);
         // Adding some more padding to the capacity because sometimes there is an error
         // about not having enough space. Not sure why that happens, though.
-        let mut filter = CuckooFilter::with_capacity(capacity + 64);
+        let mut filter = CuckooFilter::with_capacity(capacity + 256);
         if let Some(words) = words {
             for word in words {
                 trace!("{}", word);
